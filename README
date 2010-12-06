@@ -1,0 +1,26 @@
+CLC: OpenCL compiler and syntax checker
+---------------------------------------
+
+CLC is a small utility that allow you to compile OpenCL sources into precompiled
+binaries. These binaries can then be loaded with clCreateProgramWithBinary.
+
+The program is licensed with a new BSD style licence. Please see the LICENCE
+file.
+
+The main purpose is to be able to syntax check OpenCL files.
+
+At the moment, it is not possible to specify multiple source files, and there
+is no way to control preprocessor defines and include paths for the OpenCL
+compiler. This may be fixed in the future as need arise.
+
+BUILD INSTRUCTIONS
+------------------
+
+1. Edit the makefile, you may want to change the compiler (which defaults to
+   clang). Most of all you want to change the CFLAGS variable to use the arch
+   speciffic CFLAGS for your system.
+
+2. Run make
+
+3. Copy the clc binary to whatever place you want it installed in, there is
+   no install command in the makefile; use cp instead.
